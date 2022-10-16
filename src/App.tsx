@@ -1,33 +1,17 @@
-import React, { useState } from "react";
-import logo from "./logo.svg";
+import React from "react";
 import "./App.css";
-import { Button } from "./components/Button";
 import s from "./App.module.css";
+import Counter from "./components/Counter/Counter";
+import SettingCounter from "./components/Counter/SettingCounter";
 
 function App() {
-  let [count, setCount] = useState<number>(0);
 
-  const onClickInc = () => {
-    if (count < 5) {
-      setCount(count + 1);
-    }
-  };
-
-  const onClickReset = () => {
-    setCount(0);
-  };
-
-  return (
-    <div className={s.container}>
-      <div>
-        <span className={count === 5 ? s.redCount : s.count}>{count}</span>
-      </div>
-      <div>
-        <Button name="inc" onClick={onClickInc} isDisabled={count === 5} />
-        <Button name="reset" onClick={onClickReset} isDisabled={count === 0} />
-      </div>
-    </div>
-  );
+    return (
+        <div className={s.app}>
+            <SettingCounter/>
+            {/*<Counter/>*/}
+        </div>
+    );
 }
 
 export default App;

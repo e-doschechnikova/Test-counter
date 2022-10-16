@@ -9,18 +9,19 @@ body {
   height: 100vh;
 }
 
-.container {
-  border: 1px solid #293133;
-  width: 500px;
-  height: 200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 40px;
-  text-align: center;
-  font-family: "Montserrat", sans-serif;
-}
+/*.app {*/
+/*  font-size: 40px;*/
+/*  text-align: center;*/
+/*  font-family: "Montserrat", sans-serif;*/
+/*  border: 1px solid #293133;*/
+/*  margin: 0 auto;*/
+/*  max-width: 60%;*/
+/*  height: 200px;*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  justify-content: space-between;*/
+
+/*}*/
 
 .redCount {
   color: #ff033e;
