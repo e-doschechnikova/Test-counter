@@ -28,8 +28,12 @@ const SettingCounter = () => {
     return (
         <div className={s.settingContainer}>
             <div>
-                <span>max value:<NumberInput value={maxValue} callback={changeMaxValue}/></span>
-                <span>start value:<NumberInput value={startValue} callback={changeStartValue}/></span>
+                <span className={maxValue <= startValue ? s.redValue : s.value}>max value:<NumberInput value={maxValue}
+                                                                                                       callback={changeMaxValue}/></span>
+                <span
+                    className={startValue < 0 || startValue === maxValue ? s.redValue : s.value}>start value:<NumberInput
+                    value={startValue}
+                    callback={changeStartValue}/></span>
             </div>
             <div>
                 <Button name="set" onClick={setValue} isDisabled={false}/>
@@ -37,6 +41,7 @@ const SettingCounter = () => {
         </div>
     );
 };
+
 
 // className={startValue < 0 ? s.redValue : s.value}
 
