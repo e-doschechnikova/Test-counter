@@ -9,7 +9,7 @@ function App() {
     return (
         <div className={s.app}>
             <SettingCounter/>
-            {/*<Counter/>*/}
+            <Counter/>
         </div>
     );
 }

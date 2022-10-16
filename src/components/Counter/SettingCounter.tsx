@@ -9,15 +9,15 @@ const SettingCounter = () => {
     const [startValue, setStartValue] = useState<number>(2)
 
     const changeMaxValue = (value: number) => {
-        if (value > -1) {
+        if (value > -1 && value >= startValue) {
             setMaxValue(value)
         }
     }
 
     const changeStartValue = (value: number) => {
-      setStartValue(value)
-
-
+        if (startValue < maxValue) {
+            setStartValue(value)
+        }
     }
 
 // button logic
@@ -29,7 +29,7 @@ const SettingCounter = () => {
         <div className={s.settingContainer}>
             <div>
                 <span>max value:<NumberInput value={maxValue} callback={changeMaxValue}/></span>
-                <span className={startValue < 0 ? s.redValue : s.value}>start value:<NumberInput value={startValue} callback={changeStartValue}/></span>
+                <span>start value:<NumberInput value={startValue} callback={changeStartValue}/></span>
             </div>
             <div>
                 <Button name="set" onClick={setValue} isDisabled={false}/>
@@ -37,5 +37,7 @@ const SettingCounter = () => {
         </div>
     );
 };
+
+// className={startValue < 0 ? s.redValue : s.value}
 
 export default SettingCounter;
